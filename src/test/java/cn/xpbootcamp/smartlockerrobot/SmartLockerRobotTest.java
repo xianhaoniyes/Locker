@@ -47,5 +47,15 @@ public class SmartLockerRobotTest {
     }
 
 
+    @Test(expected = LockerIsFullException.class)
+    public void should_throw_LockerIsFullException_when_locker_save_bag_given_lockers_are_full(){
+        Locker firstLocker = new Locker(1);
+        Locker secondLocker = new Locker(1);
+        SmartLockerRobot robot = new SmartLockerRobot(Arrays.asList(firstLocker,secondLocker));
+
+        robot.save(new Bag());
+        robot.save(new Bag());
+        robot.save(new Bag());
+    }
 
 }
