@@ -32,4 +32,8 @@ public class Locker {
         return bag;
 
     }
+
+    public int currentCapacity(){
+        return availableCapacity;
+    }
 }
