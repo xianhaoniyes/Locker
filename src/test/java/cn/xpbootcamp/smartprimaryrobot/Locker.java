@@ -1,16 +1,27 @@
 package cn.xpbootcamp.smartprimaryrobot;
 
+import java.util.HashMap;
+
 public class Locker {
     private int capacity;
+    private int availableCapacity;
+    private HashMap<Ticket,Bag> bags = new HashMap<>();
 
     public Locker(int capacity) {
         this.capacity = capacity;
+        this.availableCapacity = capacity;
     }
 
     public Ticket save(Bag bag) {
-        if(capacity == 0)
+        if(availableCapacity == 0)
             throw new LockerIsFullException();
-        capacity -- ;
-        return new Ticket();
+        Ticket ticket = new Ticket();
+        bags.put(ticket,bag);
+        availableCapacity -- ;
+        return ticket;
+    }
+
+    public Bag pickupBy(Ticket ticket) {
+        return bags.get(ticket);
     }
 }
