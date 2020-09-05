@@ -11,11 +11,10 @@
 评分标准：参考Classroom中的评分标准Excel文档
 
 ### 需求澄清总结：
-1. 储物柜没有容量限制
-2. 储物柜没有尺寸限制，默认多大的包都能存
-3. 硬件系统功能不需要考虑（开门/关门/按钮/停电/没票纸）
-4. 存包失败，需要提示用户是因为储物柜满了
-5. 取包失败，需要提示用户是因为票据无效
-6. 存包的位置是随机，没有顺序
-7. 不要脑补需求，及时和PO确认
-8. 不考虑并发
+
+1. Given robot 管理 2 个 locker: lockerA, lockerB， lockerA 剩余容量大于B, 一个待存包，when 存包， then 存包于lockerA， 返回小票
+2. Given robot 管理 2 个 locker: lockerA, lockerB， lockerB 剩余容量大于A, 一个待存包，when 存包， then 存包于lockerB， 返回小票
+3.Given robot 管理 2 个 locker: lockerA, lockerB， lockerA 剩余容量等于B, 一个待存包，when 存包， then 存包于lockerA， 返回小票
+4. Given robot 管理 2 个 locker: lockerA, lockerB， lockerA,B 均无空格, 一个待存包，when 存包， then 存包失败， 提示信息
+5. Given robot 管理 2 个 locker, 1 张有效小票， when 取包， then 返回包
+6. Given robot 管理 2 个 locker, 1 张无效小票，when 取包，then 不返回包，提示信息
