@@ -13,13 +13,13 @@ public class SmartLockerRobot {
     }
 
     public Ticket save(Bag bag) {
-        Locker locker_max = lockers.get(0);
+        Locker lockerMax = lockers.get(0);
         for (Locker locker: lockers) {
-            if (locker.currentCapacity() > locker_max.currentCapacity()){
-                locker_max = locker;
+            if (locker.currentCapacity() > lockerMax.currentCapacity()){
+                lockerMax = locker;
             }
         }
-        return locker_max.save(bag);
+        return lockerMax.save(bag);
     }
 
     public Bag pickupBy(Ticket ticket) {

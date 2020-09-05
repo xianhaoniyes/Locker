@@ -3,12 +3,10 @@ package cn.xpbootcamp.smartlockerrobot;
 import java.util.HashMap;
 
 public class Locker {
-    private int capacity;
     private int availableCapacity;
     private HashMap<Ticket,Bag> bags = new HashMap<>();
 
     public Locker(int capacity) {
-        this.capacity = capacity;
         this.availableCapacity = capacity;
     }
 

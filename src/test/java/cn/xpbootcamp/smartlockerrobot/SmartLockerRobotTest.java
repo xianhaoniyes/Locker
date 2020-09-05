@@ -65,9 +65,9 @@ public class SmartLockerRobotTest {
         Bag bag = new Bag();
         Ticket ticket = robot.save(bag);
 
-        Bag bag_return = robot.pickupBy(ticket);
+        Bag returnedBag = robot.pickupBy(ticket);
 
-        Assert.assertSame(bag,bag_return);
+        Assert.assertSame(bag,returnedBag);
 
     }
 
