@@ -72,6 +72,15 @@ public class SmartLockerRobotTest {
     }
 
 
+    @Test(expected = InvalidTicketException.class)
+    public void should_return_InvalidTicketException_given_invalid_ticket(){
 
+        SmartLockerRobot robot = new SmartLockerRobot(Arrays.asList(new Locker(2),new Locker(1)));
+
+        Ticket ticket = new Ticket();
+
+         robot.pickupBy(ticket);
+
+    }
 
 }
