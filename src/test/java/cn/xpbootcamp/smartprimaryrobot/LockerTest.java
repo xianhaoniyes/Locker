@@ -32,4 +32,12 @@ public class LockerTest {
 
         Assert.assertSame(savingBag,takingBag);
     }
+
+
+    @Test(expected = InvalidTicketException.class)
+    public void should_throw_InvalidTicketException_when_locker_pick_up_bag_given_an_invalid_ticket() {
+        Locker locker = new Locker(1);
+
+        locker.pickupBy(null);
+    }
 }
