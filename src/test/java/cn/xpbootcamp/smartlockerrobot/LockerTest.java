@@ -1,4 +1,4 @@
-package cn.xpbootcamp.smartprimaryrobot;
+package cn.xpbootcamp.smartlockerrobot;
 import org.junit.Assert;
 import org.junit.Test;
 

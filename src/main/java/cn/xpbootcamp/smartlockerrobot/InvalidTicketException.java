@@ -1,4 +1,4 @@
-package cn.xpbootcamp.smartprimaryrobot;
+package cn.xpbootcamp.smartlockerrobot;
 
 public class InvalidTicketException extends RuntimeException {
 }
