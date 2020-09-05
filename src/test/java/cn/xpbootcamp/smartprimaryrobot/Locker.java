@@ -22,9 +22,14 @@ public class Locker {
     }
 
     public Bag pickupBy(Ticket ticket) {
-        if(ticket == null)
-            throw new InvalidTicketException();
 
-        return bags.get(ticket);
+        Bag bag =  bags.remove(ticket);
+
+        if(bag == null){
+            throw new InvalidTicketException();
+        }
+
+        return bag;
+
     }
 }
