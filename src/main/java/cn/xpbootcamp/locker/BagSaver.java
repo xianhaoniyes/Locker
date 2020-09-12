@@ -7,4 +7,8 @@ public interface BagSaver {
     Bag pickupBy(Ticket ticket);
 
     int currentCapacity();
+
+    int totalCapacity();
+
+    String report();
 }

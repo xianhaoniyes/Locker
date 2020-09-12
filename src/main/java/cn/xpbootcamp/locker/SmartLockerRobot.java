@@ -37,4 +37,17 @@ public class SmartLockerRobot implements BagSaver{
     public int currentCapacity(){
         return  lockers.stream().reduce(0,(current,element) -> current +element.currentCapacity(),Integer::sum);
     }
+
+    public int totalCapacity(){
+        return  lockers.stream().reduce(0,(current,element) -> current +element.totalCapacity(),Integer::sum);
+    }
+
+    public String report() {
+        String str = "R ";
+        str = str+ totalCapacity()+" "+currentCapacity()+"\n"+" ";
+        for (Locker locker:lockers) {
+            str = str + locker.report()+" ";
+        }
+        return str;
+    }
 }

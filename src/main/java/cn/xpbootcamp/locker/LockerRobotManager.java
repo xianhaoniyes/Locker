@@ -3,7 +3,7 @@ package cn.xpbootcamp.locker;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LockerRobotManager {
+public class LockerRobotManager implements BagSaver{
 
     final private List<BagSaver> savers;
 
@@ -39,4 +39,20 @@ public class LockerRobotManager {
         throw new InvalidTicketException();
     }
 
+    public String report() {
+        String str = "M ";
+        str = str + this.currentCapacity()+" "+this.totalCapacity()+"\n"+" ";
+        for (BagSaver saver:savers) {
+            str = str + saver.report()+" ";
+        }
+        return str;
+    }
+
+    public int currentCapacity(){
+        return  savers.stream().reduce(0,(current,element) -> current +element.currentCapacity(),Integer::sum);
+    }
+
+    public int totalCapacity(){
+        return  savers.stream().reduce(0,(current,element) -> current +element.totalCapacity(),Integer::sum);
+    }
 }

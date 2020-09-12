@@ -4,10 +4,12 @@ import java.util.HashMap;
 
 public class Locker implements BagSaver{
     private int availableCapacity;
+    private int initCapacity;
     private final HashMap<Ticket,Bag> bags = new HashMap<>();
 
     public Locker(int capacity) {
         this.availableCapacity = capacity;
+        this.initCapacity = capacity;
     }
 
     public Ticket save(Bag bag) {
@@ -34,4 +36,15 @@ public class Locker implements BagSaver{
     public int currentCapacity(){
         return availableCapacity;
     }
+
+    public int totalCapacity() {return initCapacity;}
+
+    public String report() {
+        String str= "L ";
+        str = str+currentCapacity()+" "+totalCapacity()+"\n";
+        return str;
+    }
+
+
+
 }
