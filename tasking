@@ -67,4 +67,57 @@ when pickup bag, then a indicating message will raise
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
+LockerRobotDirector
+
+1 Given a direct manage 1 manager, manager contains 2 lockers,
+locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
+when print report
+the information is M 1 2
+                     L  0 1
+                     L  1 1
+
+2 Given a director manage 1 manager, manager contains 2 robots,
+robot 1 manage 2 lockers
+locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
+robot 2 manage 2 lockers
+locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
+when print report
+the information is M 2 4
+                     R  1 2
+                        L  0 1
+                        L  1 1
+                     R  1 2
+                        L  0 1
+                        L  1 1
+
+
+3 Given a director manage 1 manager, manager contains 1 robot, 1 locker,
+robot  manage 2 lockers
+locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
+locker 2 has 1 available capacity and 1 total capacity
+when print report
+the information is M 2 4
+                     R  1 2
+                        L  0 1
+                        L  1 1
+                     L  1  1
+
+
+
+4 Given a director manage 1 manager, each manager contains 1 robot, 1 locker,
+robot  manage 2 lockers
+locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
+locker 2 has 1 available capacity and 1 total capacity
+when print report
+the information is M 4 8
+                     M 2 4
+                       R  1 2
+                          L  0 1
+                          L  1 1
+                       L  1  1
+                     M 2 4
+                       R  1 2
+                          L  0 1
+                          L  1 1
+                       L  1  1
 
