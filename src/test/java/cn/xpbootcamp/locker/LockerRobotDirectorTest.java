@@ -16,7 +16,7 @@ public class LockerRobotDirectorTest {
         firstLocker.save(new Bag());
         LockerRobotDirector lockerRobotDirector = new LockerRobotDirector(Collections.singletonList(lockerRobotManager));
 
-        String expectReport = "M 1 2\n L 0 1\n L 1 1\n ";
+        String expectReport = "M 1 2\n L 0 1\n L 1 1\n";
         System.out.println(expectReport);
         System.out.println(lockerRobotDirector.report());
 
@@ -41,9 +41,9 @@ public class LockerRobotDirectorTest {
         LockerRobotDirector lockerRobotDirector = new LockerRobotDirector(Collections.singletonList(lockerRobotManager));
 
         robot1Locker1.save(new Bag());
-        robot1Locker2.save(new Bag());
+        robot2Locker1.save(new Bag());
 
-        String expectReport = "M 2 4\n R 1 2\n  L 0 1\n  L 0 1\n R 1 2\n  L 0 1\n  L 1 1\n ";
+        String expectReport = "M 2 4\n R 1 2\n  L 0 1\n  L 1 1\n R 1 2\n  L 0 1\n  L 1 1\n";
         System.out.println(expectReport);
         System.out.println(lockerRobotDirector.report());
 

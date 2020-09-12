@@ -39,11 +39,12 @@ public class LockerRobotManager implements BagSaver{
         throw new InvalidTicketException();
     }
 
-    public String report() {
+    public String report(String empty) {
+
         String str = "M ";
-        str = str + this.currentCapacity()+" "+this.totalCapacity()+"\n"+" ";
+        str = empty+str + this.currentCapacity()+" "+this.totalCapacity()+"\n";
         for (BagSaver saver:savers) {
-            str = str + saver.report()+" ";
+            str = str + saver.report(empty+" ");
         }
         return str;
     }

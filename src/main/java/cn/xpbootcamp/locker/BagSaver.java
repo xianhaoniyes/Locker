@@ -10,5 +10,5 @@ public interface BagSaver {
 
     int totalCapacity();
 
-    String report();
+    String report(String empty);
 }

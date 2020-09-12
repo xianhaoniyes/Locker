@@ -39,9 +39,9 @@ public class Locker implements BagSaver{
 
     public int totalCapacity() {return initCapacity;}
 
-    public String report() {
+    public String report(String empty) {
         String str= "L ";
-        str = str+currentCapacity()+" "+totalCapacity()+"\n";
+        str = empty+str+currentCapacity()+" "+totalCapacity()+"\n";
         return str;
     }
 

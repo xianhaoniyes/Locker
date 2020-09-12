@@ -13,7 +13,7 @@ public class LockerRobotDirector {
     public String report() {
         String str = "";
         for (LockerRobotManager lockerRobotManager:lockerRobotManagers) {
-            str = str + lockerRobotManager.report();
+            str = str + lockerRobotManager.report("");
         }
         return str;
     }
