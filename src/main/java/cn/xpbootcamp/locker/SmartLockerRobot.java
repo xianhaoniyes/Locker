@@ -1,10 +1,10 @@
-package cn.xpbootcamp.smartlockerrobot;
+package cn.xpbootcamp.locker;
 
 import java.util.List;
 
-public class SmartLockerRobot {
+public class SmartLockerRobot implements BagSaver{
 
-    private List<Locker> lockers;
+    private final List<Locker> lockers;
 
     public SmartLockerRobot(List<Locker> lockers) {
 
@@ -32,5 +32,9 @@ public class SmartLockerRobot {
             }
         }
         throw new InvalidTicketException();
+    }
+
+    public int currentCapacity(){
+        return  lockers.stream().reduce(0,(current,element) -> current +element.currentCapacity(),Integer::sum);
     }
 }

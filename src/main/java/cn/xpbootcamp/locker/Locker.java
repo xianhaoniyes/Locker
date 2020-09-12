@@ -1,10 +1,10 @@
-package cn.xpbootcamp.smartlockerrobot;
+package cn.xpbootcamp.locker;
 
 import java.util.HashMap;
 
-public class Locker {
+public class Locker implements BagSaver{
     private int availableCapacity;
-    private HashMap<Ticket,Bag> bags = new HashMap<>();
+    private final HashMap<Ticket,Bag> bags = new HashMap<>();
 
     public Locker(int capacity) {
         this.availableCapacity = capacity;
