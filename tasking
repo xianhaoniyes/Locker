@@ -96,7 +96,7 @@ robot  manage 2 lockers
 locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
 locker 2 has 1 available capacity and 1 total capacity
 when print report
-the information is M 2 4
+the information is M 2 3
                      R  1 2
                         L  0 1
                         L  1 1
@@ -109,7 +109,7 @@ robot  manage 2 lockers
 locker 1 has 0 available capacity and 1 total capacity,locker 2 has 1 available capacity and 1 total capacity
 locker 2 has 1 available capacity and 1 total capacity
 when print report
-the information is M 4 8
+the information is
                      M 2 4
                        R  1 2
                           L  0 1

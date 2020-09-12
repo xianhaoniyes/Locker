@@ -17,8 +17,6 @@ public class LockerRobotDirectorTest {
         LockerRobotDirector lockerRobotDirector = new LockerRobotDirector(Collections.singletonList(lockerRobotManager));
 
         String expectReport = "M 1 2\n L 0 1\n L 1 1\n";
-        System.out.println(expectReport);
-        System.out.println(lockerRobotDirector.report());
 
         lockerRobotDirector.report();
         Assert.assertEquals(expectReport,lockerRobotDirector.report());
@@ -29,25 +27,36 @@ public class LockerRobotDirectorTest {
     public void should_print_correct_information_with_condition_2(){
         Locker robot1Locker1 = new Locker(1);
         Locker robot1Locker2 = new Locker(1);
-
         Locker robot2Locker1 = new Locker(1);
         Locker robot2Locker2 = new Locker(1);
-
         PrimaryLockerRobot robot1 = new PrimaryLockerRobot(Arrays.asList(robot1Locker1,robot1Locker2));
         PrimaryLockerRobot robot2 = new PrimaryLockerRobot(Arrays.asList(robot2Locker1,robot2Locker2));
-
-
         LockerRobotManager lockerRobotManager = new LockerRobotManager(Arrays.asList(robot1,robot2));
         LockerRobotDirector lockerRobotDirector = new LockerRobotDirector(Collections.singletonList(lockerRobotManager));
-
         robot1Locker1.save(new Bag());
         robot2Locker1.save(new Bag());
 
         String expectReport = "M 2 4\n R 1 2\n  L 0 1\n  L 1 1\n R 1 2\n  L 0 1\n  L 1 1\n";
-        System.out.println(expectReport);
-        System.out.println(lockerRobotDirector.report());
-
         lockerRobotDirector.report();
+
+        Assert.assertEquals(expectReport,lockerRobotDirector.report());
+
+    }
+
+    @Test
+    public void should_print_correct_information_with_condition_3(){
+        Locker robotLocker1 = new Locker(1);
+        Locker robotLocker2= new Locker(1);
+        Locker locker = new Locker(1);
+
+        PrimaryLockerRobot robot1 = new PrimaryLockerRobot(Arrays.asList(robotLocker1,robotLocker2));
+        LockerRobotManager lockerRobotManager = new LockerRobotManager(Arrays.asList(robot1,locker));
+        LockerRobotDirector lockerRobotDirector = new LockerRobotDirector(Collections.singletonList(lockerRobotManager));
+        robotLocker1.save(new Bag());
+
+        String expectReport = "M 2 3\n R 1 2\n  L 0 1\n  L 1 1\n L 1 1\n";
+        lockerRobotDirector.report();
+
         Assert.assertEquals(expectReport,lockerRobotDirector.report());
 
     }
